@@ -7,7 +7,7 @@ var deleteButtons = document.getElementsByClassName('btn-delete');
   function getPriceByProduct() {
 
     for( i = 0; i < getProduct.length; i++ ) {
-      var totalPrice = Number(getUnitPrice[i].innerHTML.replace(/[^0-9\.]+/g,"")) * getUnitQty[i].value;
+      var totalPrice = parseInt(getUnitPrice[i].innerHTML.replace(/[^0-9\.]+/g,"")) * getUnitQty[i].value;
       document.getElementsByClassName('total-product-price')[i].innerHTML = totalPrice;
     }
     getTotalPrice();
@@ -15,7 +15,7 @@ var deleteButtons = document.getElementsByClassName('btn-delete');
 
 function getTotalPrice() {
   var priceArray = [];
-  for(i = 0; i < getProduct.length; i++) {
+  for(var i = 0; i < getProduct.length; i++) {
     var productPriceValue = parseInt(getTotalProductPrice[i].innerHTML);
     priceArray.push(productPriceValue);
   }
